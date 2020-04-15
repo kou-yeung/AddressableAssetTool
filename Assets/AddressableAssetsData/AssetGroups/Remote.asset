@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Remote
+  m_EditorClassIdentifier: 
+  m_GroupName: Remote
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 48c4e83e2076e1548a75e0f1f2eec410
+  m_SerializeEntries:
+  - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
+    m_Address: Assets/AddressableAssets/001/data.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    m_mainAssetType: UnityEngine.TextAsset, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
+  - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
+    m_Address: Assets/AddressableAssets/Chara.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
+      type: 3}
+    m_TargetAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
+      type: 3}
+  - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
+    m_Address: Assets/AddressableAssets/001/chara.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 2800000, guid: 8f2c9c4342a53a8408457cc738da9e37, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 8f2c9c4342a53a8408457cc738da9e37, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3ef47ac327981294f8a34621c1cb86f2, type: 2}
+    - {fileID: 11400000, guid: 1170775179de95949952812d1f87d9e9, type: 2}
