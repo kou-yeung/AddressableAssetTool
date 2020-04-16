@@ -45,7 +45,7 @@ MonoBehaviour:
       - m_Id: 131d99e3477de6446979abc67ce92c63
         m_Value: ServerData/[BuildTarget]
       - m_Id: bfd6d24fbfb59844ba9c3f5bbeb34f10
-        m_Value: http://localhost:8000/[BuildTarget]
+        m_Value: BASE_URL/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: a5e407b658892a0408cdfd7e64a8f2c8
       m_Name: BuildTarget
@@ -87,4 +87,5 @@ MonoBehaviour:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
     m_NextInstanceId: 0
-    m_RegisteredServiceTypeRefs: []
+    m_RegisteredServiceTypeRefs:
+    - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor

@@ -16,7 +16,18 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 368a8aa4ddb57ac40b793de509541c12
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
+    m_Address: Assets/AddressableAssets/Chara.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Include
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
+      type: 3}
+    m_TargetAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
+      type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:

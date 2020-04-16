@@ -11,17 +11,6 @@ using System;
 
 namespace AddressableAssetsTool
 {
-
-    /// <summary>
-    /// アセットの種類:Label に設定される
-    /// </summary>
-    public enum AssetType
-    {
-        Include,    // アプリに内蔵する
-        Preload,    // 追加ダウンロード(チュートリアル後か、タイトル後
-        Async,      // 随時ダウンロード
-    }
-
     /// <summary>
     /// AAS でビルドする機能を提供します
     /// </summary>

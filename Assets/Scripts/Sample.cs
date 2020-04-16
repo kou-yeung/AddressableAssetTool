@@ -1,29 +1,20 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using System.IO;
-using System;
-
-
-#if UNITY_EDITOR
-using UnityEditor;
-using UnityEditor.AddressableAssets;
-using UnityEditor.AddressableAssets.Settings;
-using UnityEditor.AddressableAssets.Build;
-#endif
+using AddressableAssetsTool;
 
 public class Sample : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        Addressables.GetDownloadSizeAsync("Preload").Completed += (size) =>
+        AddressableAssets.BaseUrl = "http://localhost:8000";
+
+        AddressableAssets.GetPreloadSizeAsync().Completed += (size) =>
         {
             if (size.Result > 0)
             {
-                var handle = Addressables.DownloadDependenciesAsync("Preload", true);
+                var handle = AddressableAssets.PreloadDependenciesAsync();
                 StartCoroutine(DownloadWait(handle));
                 handle.Completed += (res) =>
                 {
@@ -52,14 +43,13 @@ public class Sample : MonoBehaviour
         
     }
 
-
     void Load()
     {
-        var resource = Addressables.LoadAssetAsync<GameObject>("Assets/AddressableAssets/Chara.prefab");
+        var resource = AddressableAssets.LoadAssetAsync<GameObject>("Assets/AddressableAssets/Chara.prefab");
         resource.Completed += (res) =>
         {
             Instantiate(res.Result, this.transform);
         };
-
     }
 }
+

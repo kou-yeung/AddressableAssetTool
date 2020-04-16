@@ -26,17 +26,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     m_MainAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
     m_TargetAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
-  - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
-    m_Address: Assets/AddressableAssets/Chara.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Preload
-    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
-      type: 3}
-    m_TargetAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
-      type: 3}
   - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
     m_Address: Assets/AddressableAssets/001/chara.png
     m_ReadOnly: 0
