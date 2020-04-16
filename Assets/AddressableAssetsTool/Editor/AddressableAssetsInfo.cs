@@ -12,10 +12,10 @@ namespace AddressableAssetsTool
     [Serializable]
     public class AddressableAssetsItem
     {
-        [SerializeField] public DefaultAsset path;         // フォルダ
-        [SerializeField] public AssetType assetType;       // 種類
-        [SerializeField] public bool recursive;            // 再帰する
-        [SerializeField] public string extensions;  // 拡張子 ',' 区切り
+        [SerializeField] public DefaultAsset path;          // フォルダ
+        [SerializeField] public AssetType assetType;        // 種類
+        [SerializeField] public bool recursive;             // 再帰する
+        [SerializeField] public string extensions;          // 拡張子 ',' 区切り
 
         public static string[] Properties = new[]
         {

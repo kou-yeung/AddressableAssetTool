@@ -39,16 +39,24 @@ namespace AddressableAssetsTool
                 if (item.path == null) continue;
 
                 string path = AssetDatabase.GetAssetOrScenePath(item.path);
-                foreach (var extension in item.extensions.Split(';'))
+
+                var extensions = item.extensions;
+                if (string.IsNullOrEmpty(extensions)) extensions = "*.*";
+
+                foreach (var extension in extensions.Split(';'))
                 {
                     var option = item.recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
                     foreach (var fn in Directory.GetFiles(path, extension, option))
                     {
+                        if (Path.GetExtension(fn) == ".meta") continue; // meta データ弾く
                         var group = (item.assetType == AssetType.Include) ? asset.local : asset.remote;
                         var e = settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(fn), group, false, true);
-                        e.labels.Clear();
-                        e.SetLabel(item.assetType.ToString(), true);
-                        entries.Add(e.guid);
+                        if (e != null)
+                        {
+                            e.labels.Clear();
+                            e.SetLabel(item.assetType.ToString(), true);
+                            entries.Add(e.guid);
+                        }
                     }
                 }
             }
@@ -80,7 +88,16 @@ namespace AddressableAssetsTool
             {
                 // すでにStateDataがあれば、ContentUpdate(差分)ビルドします
                 var result = ContentUpdateScript.BuildContentUpdate(AddressableAssetSettingsDefaultObject.Settings, path);
-                res = result.Error;
+                if (result != null)
+                {
+                    res = result.Error;
+                }
+                else
+                {
+                    // エラーが発生したため、初回ビルドとして処理する
+                    AddressableAssetSettings.BuildPlayerContent();
+                    Debug.Log("BuildContentUpdate Error:初回ビルドで処理する");
+                }
             }
             else
             {
@@ -90,23 +107,24 @@ namespace AddressableAssetsTool
             return res;
         }
 
-        /// <summary>
-        /// クリーンしてからビルドする
-        /// </summary>
-        /// <returns></returns>
-        [MenuItem("AAS/Clean Build")]
-        public static string CleanBuild()
-        {
-            Clean();
-            return Build();
-        }
-        /// <summary>
-        /// ビルドしたデータをクリアする
-        /// </summary>
-        public static void Clean()
-        {
-            AddressableAssetSettings.CleanPlayerContent(null);
-            BuildCache.PurgeCache(false);
-        }
+        ///// <summary>
+        ///// クリーンしてからビルドする
+        ///// </summary>
+        ///// <returns></returns>
+        //[MenuItem("AAS/Clean Build")]
+        //public static string CleanBuild()
+        //{
+        //    Clean();
+        //    AddressableAssetSettings.BuildPlayerContent();
+        //    return "";
+        //}
+        ///// <summary>
+        ///// ビルドしたデータをクリアする
+        ///// </summary>
+        //public static void Clean()
+        //{
+        //    AddressableAssetSettings.CleanPlayerContent(null);
+        //    BuildCache.PurgeCache(false);
+        //}
     }
 }
