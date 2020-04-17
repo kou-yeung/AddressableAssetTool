@@ -20,7 +20,7 @@ this step to
 
 1.Create "AddressableAssetSettings"
 
-2.Create "Remote" group for remote load
+2.Create "Remote" group for remote download
 
 3.Set RemoteLoadPath to "BASE_URL/[BuildTarget]"
 
