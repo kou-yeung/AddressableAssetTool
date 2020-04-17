@@ -1,4 +1,4 @@
-# AddressableAssetTool (AAS)
+# AddressableAssetTool
 
 Easy for Setup Asset Address & Build.
 
