@@ -44,7 +44,7 @@ this step to
 
 3.Build!!
 
-4.Use it!! https://gist.github.com/kou-yeung/cee45275121f4b515510de486ea1c67a
+4.[Use it!!](https://gist.github.com/kou-yeung/cee45275121f4b515510de486ea1c67a)
 
 # System requirements
 
