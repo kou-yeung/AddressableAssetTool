@@ -10,7 +10,7 @@ install Addressables:
 
 [Window] > [Package Manager] > [Addressables] > [1.7.5] > [Install]
 
-[Download](https://github.com/kou-yeung/AddressableAssetTool/releases) and import unitypackage
+[Download](https://github.com/kou-yeung/AddressableAssetTool/releases) and import AddressableAssetTool.unitypackage
 
 ## Setup
 
