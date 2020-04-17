@@ -32,8 +32,17 @@ this step auto setup...
 
 1. Select "AddressableAssetTool"
 
-2. 
+2. Add "Build Rule"
 
+・Drag&Drop a folder to "path"
+
+・Set "assetType" : Include(include in app) Preload(Load for Remote)
+
+・recursive : recursive file from folder
+
+・extensions : set file extension to pack.(Separately ';')
+
+3.Build!!
 
 # 使用バージョン
 
