@@ -40,7 +40,7 @@ this step auto setup
 
 ・recursive : recursive file from folder
 
-・extensions : set file extension to pack.(Separately ';') e.g. *.png;*.prefab
+・extensions : set file extension to pack.(Separately ';') e.g. ＊.png;＊.prefab
 
 3.Build!!
 
