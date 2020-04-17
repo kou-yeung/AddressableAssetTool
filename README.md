@@ -42,8 +42,9 @@ this step auto setup
 
 ・extensions : set file extension to pack.(Separately ';') e.g. ＊.png;＊.prefab
 
-3.Build!!
+3. Build!!
 
+4. Use it!! https://gist.github.com/kou-yeung/cee45275121f4b515510de486ea1c67a
 # 使用バージョン
 
 Addressables Version.1.7.5
