@@ -30,9 +30,9 @@ this step to
 
 ## How to use
 
-1. Select "AddressableAssetTool"
+1.Select "AddressableAssetTool"
 
-2. Add "Build Rule"
+2.Add "Build Rule"
 
 ・Drag&Drop a folder to "path"
 
@@ -42,9 +42,9 @@ this step to
 
 ・extensions : set file extension to pack.(Separately ';') e.g. ＊.png;＊.prefab
 
-3. Build!!
+3.Build!!
 
-4. Use it!! https://gist.github.com/kou-yeung/cee45275121f4b515510de486ea1c67a
+4.Use it!! https://gist.github.com/kou-yeung/cee45275121f4b515510de486ea1c67a
 # 使用バージョン
 
 Addressables Version.1.7.5
