@@ -18,7 +18,7 @@ https://github.com/kou-yeung/AddressableAssetTool/releases
 
 [AAS] > [Setup]
 
-this step auto setup
+this step to
 
 1.Create "AddressableAssetSettings"
 
