@@ -8,7 +8,7 @@ public class Sample : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AddressableAssets.BaseUrl = "http://localhost:8000";
+        AddressableAssets.Init("http://localhost:8000");
 
         AddressableAssets.GetPreloadSizeAsync().Completed += (size) =>
         {

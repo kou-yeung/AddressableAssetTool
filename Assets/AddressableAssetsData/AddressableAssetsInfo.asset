@@ -17,9 +17,5 @@ MonoBehaviour:
   items:
   - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}
     assetType: 1
-    recursive: 1
-    extensions: '*.txt;*.png'
-  - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}
-    assetType: 0
     recursive: 0
-    extensions: Chara.prefab
+    extensions: 

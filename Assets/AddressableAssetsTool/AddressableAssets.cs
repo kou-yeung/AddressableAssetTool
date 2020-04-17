@@ -23,7 +23,12 @@ namespace AddressableAssetsTool
         /// <summary>
         /// replace "BASE_URL"
         /// </summary>
-        public static string BaseUrl = "";
+        static string BaseUrl = "";
+
+        public static void Init(string baseUrl)
+        {
+            BaseUrl = baseUrl;
+        }
 
         static string CustomTransform(IResourceLocation location)
         {

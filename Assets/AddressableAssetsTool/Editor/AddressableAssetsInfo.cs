@@ -30,7 +30,14 @@ namespace AddressableAssetsTool
         {
             EditorGUIUtility.labelWidth = 70.0f;
 
-            EditorGUI.LabelField(position, label);
+            var labelText = label.text;
+            var path = property.FindPropertyRelative("path");
+            if (path != null)
+            {
+                labelText = AssetDatabase.GetAssetOrScenePath(path.objectReferenceValue);
+            }
+
+            EditorGUI.LabelField(position, labelText);
             position.y += EditorGUIUtility.singleLineHeight;
 
             foreach (var p in AddressableAssetsItem.Properties)
@@ -73,18 +80,24 @@ namespace AddressableAssetsTool
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-
+            // group
             EditorGUILayout.PropertyField(serializedObject.FindProperty("local"), new GUIContent("Local"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("remote"), new GUIContent("Remote"));
 
-            var prop = serializedObject.FindProperty("items");
+            // build button
+            if (GUILayout.Button("Build", GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))
+            {
+                AddressableAssetsTool.Build();
+                return;
+            }
 
+            // ビルドルール
             if (reorderableList == null)
             {
+                var prop = serializedObject.FindProperty("items");
+
                 reorderableList = new ReorderableList(serializedObject, prop);
-
                 reorderableList.elementHeightCallback = index => (EditorGUIUtility.singleLineHeight * (AddressableAssetsItem.Properties.Length + 2));
-
                 reorderableList.drawElementCallback = (rect, index, isActive, isFocus) =>
                 {
                     var element = prop.GetArrayElementAtIndex(index);
