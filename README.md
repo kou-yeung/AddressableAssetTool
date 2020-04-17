@@ -45,6 +45,9 @@ this step to
 3.Build!!
 
 4.Use it!! https://gist.github.com/kou-yeung/cee45275121f4b515510de486ea1c67a
-# 使用バージョン
+
+# System requirements
+
+Unity 2019.3.6f1
 
 Addressables Version.1.7.5
