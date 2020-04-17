@@ -97,7 +97,12 @@ namespace AddressableAssetsTool
                 var prop = serializedObject.FindProperty("items");
 
                 reorderableList = new ReorderableList(serializedObject, prop);
+
+                // タイトル設定
+                reorderableList.drawHeaderCallback = rect => EditorGUI.LabelField(rect, "Build Rule");
+                // 高さ取得
                 reorderableList.elementHeightCallback = index => (EditorGUIUtility.singleLineHeight * (AddressableAssetsItem.Properties.Length + 2));
+                // アイテム描画
                 reorderableList.drawElementCallback = (rect, index, isActive, isFocus) =>
                 {
                     var element = prop.GetArrayElementAtIndex(index);
