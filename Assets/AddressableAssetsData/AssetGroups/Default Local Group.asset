@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: b66a1aae287d5b84bab085f2ffd1e557
+  m_GUID: 2f63f826f9880894a915377d4125deff
   m_SerializeEntries:
   - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
     m_Address: Assets/AddressableAssets/001/data.txt
@@ -30,5 +30,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 14cb1179fad7fbb4d94e7cca532b5f15, type: 2}
-    - {fileID: 11400000, guid: efb3a8b846858114c99673ce3a8c2358, type: 2}
+    - {fileID: 11400000, guid: c25c1b0b3fae305449bf01d0700c9067, type: 2}
+    - {fileID: 11400000, guid: 59529976d4972a148b226e458c675a50, type: 2}

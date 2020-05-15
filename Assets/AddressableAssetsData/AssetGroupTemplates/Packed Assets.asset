@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Packed Assets
   m_EditorClassIdentifier: 
   m_SchemaObjects:
-  - {fileID: 804425132505680672}
-  - {fileID: 3294091488783181113}
+  - {fileID: 5123730825268349607}
+  - {fileID: 6770321069341188744}
   m_Description: Pack assets into asset bundles.
   m_Settings: {fileID: 0}
---- !u!114 &804425132505680672
+--- !u!114 &5123730825268349607
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_AssemblyName: 
     m_ClassName: 
   m_BundleNaming: 0
---- !u!114 &3294091488783181113
+--- !u!114 &6770321069341188744
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

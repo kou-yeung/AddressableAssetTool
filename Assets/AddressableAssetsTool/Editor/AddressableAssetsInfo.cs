@@ -69,8 +69,6 @@ namespace AddressableAssetsTool
         [SerializeField]
         public List<AddressableAssetsItem> items;
 
-        [SerializeField]
-        public List<string> labels = new List<string>();
     }
 
     /// <summary>
@@ -86,8 +84,6 @@ namespace AddressableAssetsTool
             // group
             EditorGUILayout.PropertyField(serializedObject.FindProperty("local"), new GUIContent("Local"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("remote"), new GUIContent("Remote"));
-            // 設定可能なラベル一覧
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("labels"), new GUIContent("Labels"));
 
             // build button
             if (GUILayout.Button("Build", GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))
