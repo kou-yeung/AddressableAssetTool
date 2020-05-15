@@ -13,9 +13,8 @@ namespace AddressableAssetsTool
     /// </summary>
     public enum AssetType
     {
-        Include,    // アプリに内蔵する
-        Preload,    // 追加ダウンロード(チュートリアル後か、タイトル後
-        Async,      // 随時ダウンロード
+        Local,      // アプリに内蔵する
+        Remode,     // サーバに置く
     }
 
     public static class AddressableAssets
@@ -42,23 +41,23 @@ namespace AddressableAssetsTool
         }
 
         /// <summary>
-        /// Preloadのサイズ取得
+        /// 指定してラベルのサイズ取得
         /// </summary>l
         /// <returns></returns>
-        public static AsyncOperationHandle<long> GetPreloadSizeAsync()
+        public static AsyncOperationHandle<long> GetSizeAsync(string label = "Preload")
         {
-            return Addressables.GetDownloadSizeAsync(AssetType.Preload.ToString());
+            return Addressables.GetDownloadSizeAsync(label);
         }
 
         /// <summary>
-        /// Preloadラベルのデータをダウンロードする
+        /// 指定したラベルのデータをダウンロードする
         /// </summary>
         /// <param name="key"></param>
         /// <param name="autoReleaseHandle"></param>
         /// <returns></returns>
-        public static AsyncOperationHandle PreloadDependenciesAsync()
+        public static AsyncOperationHandle DownloadDependenciesAsync(string label = "Preload")
         {
-            return Addressables.DownloadDependenciesAsync(AssetType.Preload.ToString(), true);
+            return Addressables.DownloadDependenciesAsync(label, true);
         }
 
         /// <summary>

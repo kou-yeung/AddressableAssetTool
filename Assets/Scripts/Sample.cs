@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using AddressableAssetsTool;
+using UnityEngine.AddressableAssets;
 
 public class Sample : MonoBehaviour
 {
@@ -10,21 +11,23 @@ public class Sample : MonoBehaviour
     {
         AddressableAssets.Init("http://localhost:8000");
 
-        AddressableAssets.GetPreloadSizeAsync().Completed += (size) =>
+        AddressableAssets.GetSizeAsync().Completed += (size) =>
         {
             if (size.Result > 0)
             {
-                var handle = AddressableAssets.PreloadDependenciesAsync();
+                var handle = AddressableAssets.DownloadDependenciesAsync();
                 StartCoroutine(DownloadWait(handle));
                 handle.Completed += (res) =>
                 {
                     Load();
+                    Addressables.Release(res);
                 };
             }
             else
             {
                 Load();
             }
+            Addressables.Release(size);
         };
     }
 

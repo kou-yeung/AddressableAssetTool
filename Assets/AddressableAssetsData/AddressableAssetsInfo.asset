@@ -17,5 +17,13 @@ MonoBehaviour:
   items:
   - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}
     assetType: 1
-    recursive: 0
+    label: Sound
+    recursive: 1
     extensions: 
+  - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}
+    assetType: 0
+    label: 
+    recursive: 1
+    extensions: '*.txt'
+  labels:
+  - Preload

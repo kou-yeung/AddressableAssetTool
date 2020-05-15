@@ -14,17 +14,18 @@ namespace AddressableAssetsTool
     {
         [SerializeField] public DefaultAsset path;          // フォルダ
         [SerializeField] public AssetType assetType;        // 種類
+        [SerializeField] public string label;               // ラベル
         [SerializeField] public bool recursive;             // 再帰する
         [SerializeField] public string extensions;          // 拡張子 ',' 区切り
 
         public static string[] Properties = new[]
         {
-            "path", "assetType", "recursive", "extensions"
+            "path", "assetType", "label", "recursive", "extensions"
         };
     }
 
     [CustomPropertyDrawer(typeof(AddressableAssetsItem))]
-    public class PersonDataDrawer : PropertyDrawer
+    public class AddressableAssetsItemDataDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -67,6 +68,9 @@ namespace AddressableAssetsTool
 
         [SerializeField]
         public List<AddressableAssetsItem> items;
+
+        [SerializeField]
+        public List<string> labels = new List<string>();
     }
 
     /// <summary>
@@ -76,13 +80,14 @@ namespace AddressableAssetsTool
     public class AddressableAssetsInfoEditor : Editor
     {
         private ReorderableList reorderableList;
-
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
             // group
             EditorGUILayout.PropertyField(serializedObject.FindProperty("local"), new GUIContent("Local"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("remote"), new GUIContent("Remote"));
+            // 設定可能なラベル一覧
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("labels"), new GUIContent("Labels"));
 
             // build button
             if (GUILayout.Button("Build", GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))

@@ -21,11 +21,22 @@ MonoBehaviour:
     m_Address: Assets/AddressableAssets/Chara.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Preload
+    - Sound
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
+      type: 3}
+    m_TargetAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
+      type: 3}
+  - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
+    m_Address: Assets/AddressableAssets/001/chara.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Sound
+    m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 2800000, guid: 8f2c9c4342a53a8408457cc738da9e37, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 8f2c9c4342a53a8408457cc738da9e37, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:

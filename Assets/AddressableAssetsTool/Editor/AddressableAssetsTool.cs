@@ -9,6 +9,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
+using System.Reflection;
 
 namespace AddressableAssetsTool
 {
@@ -28,15 +29,17 @@ namespace AddressableAssetsTool
             var settings = AddressableAssetSettingsDefaultObject.Settings;
             var entries = new HashSet<string>();
 
-            // 使用するラベルを追加する
-            foreach (var label in Enum.GetNames(typeof(AssetType)))
-            {
-                settings.AddLabel(label, true);
-            }
-
             // 走査してグループに登録し、ラベル付けます
-            if(asset.items != null)
+            if (asset.items != null)
             {
+                // ラベル一覧を追加
+                var labels = new HashSet<string>();
+                foreach (var item in asset.items)
+                {
+                    settings.AddLabel(item.label, true);
+                }
+
+                // アドレスをリストアップし、設定する
                 foreach (var item in asset.items)
                 {
                     if (item.path == null) continue;
@@ -52,12 +55,12 @@ namespace AddressableAssetsTool
                         foreach (var fn in Directory.GetFiles(path, extension, option))
                         {
                             if (Path.GetExtension(fn) == ".meta") continue; // meta データ弾く
-                            var group = (item.assetType == AssetType.Include) ? asset.local : asset.remote;
+                            var group = (item.assetType == AssetType.Local) ? asset.local : asset.remote;
                             var e = settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(fn), group, false, true);
                             if (e != null)
                             {
                                 e.labels.Clear();
-                                e.SetLabel(item.assetType.ToString(), true);
+                                e.SetLabel(item.label, true);
                                 entries.Add(e.guid);
                             }
                         }

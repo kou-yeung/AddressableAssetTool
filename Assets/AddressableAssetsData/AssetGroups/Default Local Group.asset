@@ -16,7 +16,16 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b66a1aae287d5b84bab085f2ffd1e557
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
+    m_Address: Assets/AddressableAssets/001/data.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 
+    m_mainAssetType: UnityEngine.TextAsset, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:

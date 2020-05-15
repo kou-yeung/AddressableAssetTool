@@ -69,6 +69,8 @@ MonoBehaviour:
     - Include
     - Preload
     - Async
+    - 
+    - Sound
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 6de15d42c08e27f4b9ffa902654b25bf, type: 2}
