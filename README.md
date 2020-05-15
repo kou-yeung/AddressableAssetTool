@@ -34,7 +34,9 @@ this step to
 
 ・Drag&Drop a folder to "path"
 
-・Set "assetType" : Include(include in app) Preload(Load from Remote)
+・Set "assetType" : Local(include in app) or Remote(Load from Remote)
+
+・label : set the label group
 
 ・recursive : recursive file from folder
 
