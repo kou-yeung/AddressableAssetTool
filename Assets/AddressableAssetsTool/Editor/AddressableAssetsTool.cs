@@ -59,6 +59,12 @@ namespace AddressableAssetsTool
                             var e = settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(fn), group, false, true);
                             if (e != null)
                             {
+                                // 一旦リセット
+                                e.address = e.AssetPath;
+
+                                // 拡張子を含まない場合
+                                if (!asset.includeExtension) e.address = Path.ChangeExtension(e.address, null);
+
                                 e.labels.Clear();
                                 e.SetLabel(item.label, true);
                                 entries.Add(e.guid);

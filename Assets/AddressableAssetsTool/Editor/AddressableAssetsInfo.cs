@@ -62,13 +62,11 @@ namespace AddressableAssetsTool
             ProjectWindowUtil.CreateAsset(CreateInstance<AddressableAssetsInfo>(), "AddressableAssetsInfo.asset");
         }
 
-        [SerializeField]
         public AddressableAssetGroup local;
         public AddressableAssetGroup remote;
 
-        [SerializeField]
+        public bool includeExtension = true;
         public List<AddressableAssetsItem> items;
-
     }
 
     /// <summary>
@@ -84,6 +82,9 @@ namespace AddressableAssetsTool
             // group
             EditorGUILayout.PropertyField(serializedObject.FindProperty("local"), new GUIContent("Local"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("remote"), new GUIContent("Remote"));
+
+            // settings
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("includeExtension"), new GUIContent("Include Extension"));
 
             // build button
             if (GUILayout.Button("Build", GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))

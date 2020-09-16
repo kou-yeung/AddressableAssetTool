@@ -22,12 +22,9 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sound2D
-    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
-      type: 3}
-    m_TargetAsset: {fileID: 8720841422359832690, guid: 3ec37bdb5b3282e4a96add047f562c50,
-      type: 3}
+    m_mainAssetType: 
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
     m_Address: Assets/AddressableAssets/001/chara.png
     m_ReadOnly: 0
@@ -35,11 +32,9 @@ MonoBehaviour:
     - Sound2D
     m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 2800000, guid: 8f2c9c4342a53a8408457cc738da9e37, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 8f2c9c4342a53a8408457cc738da9e37, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:
-    m_Schemas:
-    - {fileID: 11400000, guid: 8712ab44c012eab43a8ca572d330d9f9, type: 2}
-    - {fileID: 11400000, guid: 0dbcb26884ce7484298ae66a88bfd14d, type: 2}
+    m_Schemas: []

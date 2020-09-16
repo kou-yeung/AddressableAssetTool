@@ -24,11 +24,9 @@ MonoBehaviour:
     - 
     m_mainAssetType: UnityEngine.TextAsset, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_MainAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
-    m_TargetAsset: {fileID: 4900000, guid: 169a93144638c4c46ad7e54b8ff4c5fc, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:
-    m_Schemas:
-    - {fileID: 11400000, guid: c25c1b0b3fae305449bf01d0700c9067, type: 2}
-    - {fileID: 11400000, guid: 59529976d4972a148b226e458c675a50, type: 2}
+    m_Schemas: []
