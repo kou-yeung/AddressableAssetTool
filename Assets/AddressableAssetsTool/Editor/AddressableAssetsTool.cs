@@ -36,7 +36,7 @@ namespace AddressableAssetsTool
                 var labels = new HashSet<string>();
                 foreach (var item in asset.items)
                 {
-                    settings.AddLabel(item.label, true);
+                    if (!string.IsNullOrEmpty(item.label)) settings.AddLabel(item.label, true);
                 }
 
                 // アドレスをリストアップし、設定する
@@ -66,7 +66,7 @@ namespace AddressableAssetsTool
                                 if (!asset.includeExtension) e.address = Path.ChangeExtension(e.address, null);
 
                                 e.labels.Clear();
-                                e.SetLabel(item.label, true);
+                                if (!string.IsNullOrEmpty(item.label)) e.SetLabel(item.label, true);
                                 entries.Add(e.guid);
                             }
                         }

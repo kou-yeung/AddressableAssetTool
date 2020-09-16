@@ -20,8 +20,7 @@ MonoBehaviour:
   - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
     m_Address: Assets/AddressableAssets/001/data.txt
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - 
+    m_SerializedLabels: []
     m_mainAssetType: UnityEngine.TextAsset, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     m_MainAsset: {fileID: 0}

@@ -67,7 +67,6 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Sound
-    - 
     - Sound2D
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
