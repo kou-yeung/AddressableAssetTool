@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: bcd8bef6d0dc6a842a42bdaa2e054876
   m_SerializeEntries:
   - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
-    m_Address: Assets/AddressableAssets/Chara.prefab
+    m_Address: Chara
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sound2D
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
-    m_Address: Assets/AddressableAssets/001/chara.png
+    m_Address: 001/chara
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sound2D

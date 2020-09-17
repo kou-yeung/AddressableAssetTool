@@ -66,8 +66,32 @@ namespace AddressableAssetsTool
         public AddressableAssetGroup remote;
 
         public bool includeExtension = true;
+        public List<ReplaceItem> replaces;
         public List<AddressableAssetsItem> items;
     }
+
+    [Serializable]
+    public class ReplaceItem
+    {
+        public string oldValue;
+        public string newValue;
+    }
+    [CustomPropertyDrawer(typeof(ReplaceItem))]
+    public class ReplaceItemDataDrawer : PropertyDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("oldValue"), new GUIContent("Old Value"));
+            position.y += EditorGUIUtility.singleLineHeight;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("newValue"), new GUIContent("New Value"));
+            position.y += EditorGUIUtility.singleLineHeight;
+        }
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            return EditorGUI.GetPropertyHeight(property);
+        }
+    }
+
 
     /// <summary>
     /// AddressableAssetsInfo のインスペクタ表示
@@ -75,7 +99,9 @@ namespace AddressableAssetsTool
     [CustomEditor(typeof(AddressableAssetsInfo))]
     public class AddressableAssetsInfoEditor : Editor
     {
-        private ReorderableList reorderableList;
+        private ReorderableList buildRuleList;
+        private ReorderableList replaceRuleList;
+
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
@@ -86,6 +112,27 @@ namespace AddressableAssetsTool
             // settings
             EditorGUILayout.PropertyField(serializedObject.FindProperty("includeExtension"), new GUIContent("Include Extension"));
 
+            // 置き換えルール
+            if (replaceRuleList == null)
+            {
+                var prop = serializedObject.FindProperty("replaces");
+
+                replaceRuleList = new ReorderableList(serializedObject, prop);
+
+                // タイトル設定
+                replaceRuleList.drawHeaderCallback = rect => EditorGUI.LabelField(rect, "Replace Rule");
+                // 高さ取得
+                replaceRuleList.elementHeightCallback = index => (EditorGUIUtility.singleLineHeight * 2.5f);
+                // アイテム描画
+                replaceRuleList.drawElementCallback = (rect, index, isActive, isFocus) =>
+                {
+                    var element = prop.GetArrayElementAtIndex(index);
+                    rect.height = EditorGUIUtility.singleLineHeight;
+                    EditorGUI.PropertyField(rect, element, GUIContent.none);
+                };
+            }
+            replaceRuleList.DoLayoutList();
+
             // build button
             if (GUILayout.Button("Build", GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))
             {
@@ -94,25 +141,25 @@ namespace AddressableAssetsTool
             }
 
             // ビルドルール
-            if (reorderableList == null)
+            if (buildRuleList == null)
             {
                 var prop = serializedObject.FindProperty("items");
 
-                reorderableList = new ReorderableList(serializedObject, prop);
+                buildRuleList = new ReorderableList(serializedObject, prop);
 
                 // タイトル設定
-                reorderableList.drawHeaderCallback = rect => EditorGUI.LabelField(rect, "Build Rule");
+                buildRuleList.drawHeaderCallback = rect => EditorGUI.LabelField(rect, "Build Rule");
                 // 高さ取得
-                reorderableList.elementHeightCallback = index => (EditorGUIUtility.singleLineHeight * (AddressableAssetsItem.Properties.Length + 2));
+                buildRuleList.elementHeightCallback = index => (EditorGUIUtility.singleLineHeight * (AddressableAssetsItem.Properties.Length + 2));
                 // アイテム描画
-                reorderableList.drawElementCallback = (rect, index, isActive, isFocus) =>
+                buildRuleList.drawElementCallback = (rect, index, isActive, isFocus) =>
                 {
                     var element = prop.GetArrayElementAtIndex(index);
                     rect.height = EditorGUIUtility.singleLineHeight;
                     EditorGUI.PropertyField(rect, element, GUIContent.none);
                 };
             }
-            reorderableList.DoLayoutList();
+            buildRuleList.DoLayoutList();
             serializedObject.ApplyModifiedProperties();
         }
     }

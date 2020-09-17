@@ -62,6 +62,11 @@ namespace AddressableAssetsTool
                                 // 一旦リセット
                                 e.address = e.AssetPath;
 
+                                // 置き換えルールによって整形する
+                                foreach (var replace in asset.replaces)
+                                {
+                                    e.address = e.address.Replace(replace.oldValue, replace.newValue);
+                                }
                                 // 拡張子を含まない場合
                                 if (!asset.includeExtension) e.address = Path.ChangeExtension(e.address, null);
 
