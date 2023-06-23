@@ -14,18 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   local: {fileID: 11400000, guid: d9d254a81230e1745855aca917356c1b, type: 2}
   remote: {fileID: 11400000, guid: 941be1dc5255915459f0c54fc3508ddb, type: 2}
-  includeExtension: 0
-  replaces:
-  - oldValue: Assets/AddressableAssets/
-    newValue: 
+  includeExtension: 1
+  replaces: []
   items:
   - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}
     assetType: 1
-    label: Sound2D
-    recursive: 1
-    extensions: 
-  - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}
-    assetType: 0
     label: 
     recursive: 1
-    extensions: '*.txt'
+    extensions: 

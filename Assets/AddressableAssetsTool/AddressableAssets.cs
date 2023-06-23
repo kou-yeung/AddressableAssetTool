@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AddressableAssets;
+﻿using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceLocations;
-using UnityEngine.ResourceManagement.ResourceProviders;
 
 namespace AddressableAssetsTool
 {
@@ -20,24 +15,13 @@ namespace AddressableAssetsTool
     public static class AddressableAssets
     {
         /// <summary>
-        /// replace "BASE_URL"
+        /// RemoteLoadPath : AddressableProfilesから参照されます
         /// </summary>
-        static string BaseUrl = "";
+        public static string RemoteLoadPath { get; private set; }
 
-        public static void Init(string baseUrl)
+        public static void Init(string remoteLoadPath)
         {
-            BaseUrl = baseUrl;
-        }
-
-        static string CustomTransform(IResourceLocation location)
-        {
-            return location.InternalId.Replace("BASE_URL", BaseUrl);
-        }
-
-        [RuntimeInitializeOnLoadMethod]
-        static void SetInternalIdTransform()
-        {
-            Addressables.InternalIdTransformFunc = CustomTransform;
+            RemoteLoadPath = remoteLoadPath;
         }
 
         /// <summary>
@@ -70,13 +54,5 @@ namespace AddressableAssetsTool
         {
             return Addressables.LoadAssetAsync<TObject>(key);
         }
-
-        ///// <summary>
-        ///// デバッグ情報を表示する
-        ///// </summary>
-        //public static void ShowInfo()
-        //{
-        //    Debug.Log(Addressables.RuntimePath);
-        //}
     }
 }

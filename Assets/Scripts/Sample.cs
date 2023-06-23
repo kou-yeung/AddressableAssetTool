@@ -10,35 +10,35 @@ public class Sample : MonoBehaviour
     void Start()
     {
         AddressableAssets.Init("http://localhost:8000");
-
-        AddressableAssets.GetSizeAsync().Completed += (size) =>
-        {
-            if (size.Result > 0)
-            {
-                var handle = AddressableAssets.DownloadDependenciesAsync();
-                StartCoroutine(DownloadWait(handle));
-                handle.Completed += (res) =>
-                {
-                    Load();
-                    Addressables.Release(res);
-                };
-            }
-            else
-            {
-                Load();
-            }
-            Addressables.Release(size);
-        };
+        //AddressableAssets.GetSizeAsync().Completed += (size) =>
+        //{
+        //    if (size.Result > 0)
+        //    {
+        //        var handle = AddressableAssets.DownloadDependenciesAsync();
+        //        StartCoroutine(DownloadWait(handle));
+        //        handle.Completed += (res) =>
+        //        {
+        //            Load();
+        //            Addressables.Release(res);
+        //        };
+        //    }
+        //    else
+        //    {
+        //        Load();
+        //    }
+        //    Addressables.Release(size);
+        //};
+        Load();
     }
 
-    IEnumerator DownloadWait(AsyncOperationHandle handle)
-    {
-        while (!handle.IsDone)
-        {
-            Debug.Log(handle.PercentComplete);
-            yield return null;
-        }
-    }
+    //IEnumerator DownloadWait(AsyncOperationHandle handle)
+    //{
+    //    while (!handle.IsDone)
+    //    {
+    //        Debug.Log(handle.PercentComplete);
+    //        yield return null;
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()

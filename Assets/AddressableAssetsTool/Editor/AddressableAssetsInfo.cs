@@ -56,7 +56,7 @@ namespace AddressableAssetsTool
     [Serializable]
     public class AddressableAssetsInfo : ScriptableObject
     {
-        [MenuItem("Assets/Create/AAS/AddressableAssetsInfo")]
+        [MenuItem("Assets/Create/AddressableAssetsTool/AddressableAssetsInfo")]
         public static void Create()
         {
             ProjectWindowUtil.CreateAsset(CreateInstance<AddressableAssetsInfo>(), "AddressableAssetsInfo.asset");

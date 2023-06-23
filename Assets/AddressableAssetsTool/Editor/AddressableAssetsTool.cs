@@ -1,24 +1,21 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Build;
 using UnityEditor.AddressableAssets.Settings;
-using UnityEditor.Build.Pipeline.Utilities;
-using UnityEngine;
-using System.Linq;
-using System.Collections.Generic;
-using System;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
-using System.Reflection;
+using UnityEngine;
 
 namespace AddressableAssetsTool
 {
     /// <summary>
-    /// AAS でビルドする機能を提供します
+    /// AddressableAssetsTool でビルドする機能を提供します
     /// </summary>
     public static class AddressableAssetsTool
     {
-        [MenuItem("AAS/RefreshAssetsList")]
+        [MenuItem("AddressableAssetsTool/RefreshAssetsList")]
         public static void RefreshAssetsList()
         {
             var guid = AssetDatabase.FindAssets("t:AddressableAssetsInfo", null).FirstOrDefault();
@@ -95,7 +92,7 @@ namespace AddressableAssetsTool
         /// 内部で初回ビルドか、アップデータビルドかを自動的切り替える
         /// </summary>
         /// <returns></returns>
-        [MenuItem("AAS/Build")]
+        [MenuItem("AddressableAssetsTool/Build")]
         public static string Build()
         {
             RefreshAssetsList();
@@ -149,7 +146,7 @@ namespace AddressableAssetsTool
         /// <summary>
         /// 便利セットアップ
         /// </summary>
-        [MenuItem("AAS/Setup")]
+        [MenuItem("AddressableAssetsTool/Setup")]
         public static void Setup()
         {
             // Info ファイルを検索
@@ -168,8 +165,9 @@ namespace AddressableAssetsTool
                 settings.RemoteCatalogBuildPath = settings.RemoteCatalogBuildPath;
                 settings.RemoteCatalogLoadPath = settings.RemoteCatalogLoadPath;
 
-                // Remote Load Path の BASE_URL 設定
-                settings.profileSettings.SetValue(settings.activeProfileId, "RemoteLoadPath", "BASE_URL/[BuildTarget]");
+                // Remote の Load Path設定
+                settings.profileSettings.SetValue(settings.activeProfileId, "Remote", "Custom");
+                settings.profileSettings.SetValue(settings.activeProfileId, "Remote.LoadPath", "{AddressableAssetsTool.AddressableAssets.RemoteLoadPath}/[BuildTarget]");
 
                 // リモートグループを生成
                 var remoteGroup = settings.CreateRemoteGroup();
