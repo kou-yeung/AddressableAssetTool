@@ -42,6 +42,6 @@ install Addressables:
 
 # System requirements
 
-Unity 2019.3.6f1
+Unity 2021.3.1f1
 
-Addressables Version.1.7.5
+Addressables Version.1.19.19
