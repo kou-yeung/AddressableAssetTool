@@ -8,23 +8,15 @@ Easy for Setup Asset Address & Build.
 
 install Addressables:
 
-[Window] > [Package Manager] > [Addressables] > [1.7.5] > [Install]
+[Window] > [Package Manager] > [Addressables] > [1.19.19] > [Install]
 
 [Download](https://github.com/kou-yeung/AddressableAssetTool/releases) and import AddressableAssetTool.unitypackage
 
 ## Setup
 
-[AAS] > [Setup]
-
-this step to
-
-1.Create "AddressableAssetSettings"
-
-2.Create "Remote" group for remote download
-
-3.Set RemoteLoadPath to "BASE_URL/[BuildTarget]"
-
-4.Create "AddressableAssetTool"
+1.[AddressableAssetTool] > [Setup]
+2.Select [Assets\AddressableAssetsData\AssetGroups\Remote] and change Build & Load Paths To [Remote]
+ L todo : このステップの自動化
 
 ## How to use
 
