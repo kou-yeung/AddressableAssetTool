@@ -15,7 +15,9 @@ install Addressables:
 ## Setup
 
 1.[AddressableAssetTool] > [Setup]
+
 2.Select [Assets\AddressableAssetsData\AssetGroups\Remote] and change Build & Load Paths To [Remote]
+
  L todo : このステップの自動化
 
 ## How to use
