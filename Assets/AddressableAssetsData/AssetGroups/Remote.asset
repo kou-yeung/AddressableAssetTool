@@ -13,25 +13,29 @@ MonoBehaviour:
   m_Name: Remote
   m_EditorClassIdentifier: 
   m_GroupName: Remote
-  m_Data:
-    m_SerializedData: []
   m_GUID: e99ed1c4818e7ef48a16427ca421afaa
   m_SerializeEntries:
-  - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
-    m_Address: Assets/AddressableAssets/Chara.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
-    m_Address: Assets/AddressableAssets/001/chara.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
     m_Address: Assets/AddressableAssets/001/data.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
+    m_Address: Assets/AddressableAssets/Chara.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
+    m_Address: Assets/AddressableAssets/001/chara.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: dc60b7619c8d7714d8fad26bf1a92dd2, type: 2}
     - {fileID: 11400000, guid: 473fc797d9778c446a82caca23552303, type: 2}
+    - {fileID: 11400000, guid: dc60b7619c8d7714d8fad26bf1a92dd2, type: 2}

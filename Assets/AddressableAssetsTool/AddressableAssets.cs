@@ -54,5 +54,10 @@ namespace AddressableAssetsTool
         {
             return Addressables.LoadAssetAsync<TObject>(key);
         }
+
+        public static void Release<TObject>(AsyncOperationHandle<TObject> handle)
+        {
+            Addressables.Release(handle);
+        }
     }
 }
