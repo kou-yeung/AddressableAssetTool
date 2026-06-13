@@ -136,11 +136,25 @@ namespace AddressableAssetsTool
             {
                 group = @this.CreateGroup(name, false, false, false, null, typeof(ContentUpdateGroupSchema), typeof(BundledAssetGroupSchema));
                 var schema = group.GetSchema<BundledAssetGroupSchema>();
-                schema.BuildPath.SetVariableByName(@this, "RemoteBuildPath");
-                schema.LoadPath.SetVariableByName(@this, "RemoteLoadPath");
-                schema.BundleMode = BundledAssetGroupSchema.BundlePackingMode.PackSeparately;
+                if (schema != null)
+                {
+                    schema.BuildPath.SetVariableByName(@this, AddressableAssetSettings.kRemoteBuildPath);
+                    schema.LoadPath.SetVariableByName(@this, AddressableAssetSettings.kRemoteLoadPath);
+                    schema.BundleMode = BundledAssetGroupSchema.BundlePackingMode.PackSeparately;
+
+                    EditorUtility.SetDirty(group);
+                }
             }
             return group;
+        }
+        private static void SetProfileValue(AddressableAssetProfileSettings profileSettings, string profileId, string variableName, string value)
+        {
+            if (profileSettings.GetProfileDataByName(variableName) == null)
+            {
+                profileSettings.CreateValue(variableName, value);
+            }
+
+            profileSettings.SetValue(profileId, variableName, value);
         }
 
         /// <summary>
@@ -162,12 +176,17 @@ namespace AddressableAssetsTool
 
                 // リモートサーバにカタログを置くように設定する
                 settings.BuildRemoteCatalog = true;
-                settings.RemoteCatalogBuildPath = settings.RemoteCatalogBuildPath;
-                settings.RemoteCatalogLoadPath = settings.RemoteCatalogLoadPath;
 
-                // Remote の Load Path設定
-                settings.profileSettings.SetValue(settings.activeProfileId, "Remote", "Custom");
-                settings.profileSettings.SetValue(settings.activeProfileId, "Remote.LoadPath", "{AddressableAssetsTool.AddressableAssets.RemoteLoadPath}/[BuildTarget]");
+                // Profile 変数を作成/更新
+                var profileSettings = settings.profileSettings;
+                var profileId = settings.activeProfileId;
+
+                SetProfileValue(profileSettings, profileId, AddressableAssetSettings.kRemoteBuildPath, "ServerData/[BuildTarget]");
+                SetProfileValue(profileSettings, profileId, AddressableAssetSettings.kRemoteLoadPath, "{AddressableAssetsTool.AddressableAssets.RemoteLoadPath}/[BuildTarget]");
+
+                // Remote Catalog も RemoteBuildPath / RemoteLoadPath を使う
+                settings.RemoteCatalogBuildPath.SetVariableByName(settings, AddressableAssetSettings.kRemoteBuildPath);
+                settings.RemoteCatalogLoadPath.SetVariableByName(settings, AddressableAssetSettings.kRemoteLoadPath);
 
                 // リモートグループを生成
                 var remoteGroup = settings.CreateRemoteGroup();
@@ -180,6 +199,9 @@ namespace AddressableAssetsTool
                 // グループをセットする
                 info.local = settings.DefaultGroup;
                 info.remote = remoteGroup;
+
+                EditorUtility.SetDirty(settings);
+                AssetDatabase.SaveAssets();
 
                 // infoを選択する
                 Selection.activeObject = info;

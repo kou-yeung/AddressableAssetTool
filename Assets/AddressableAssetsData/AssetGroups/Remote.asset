@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Remote
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Remote
-  m_GUID: e99ed1c4818e7ef48a16427ca421afaa
+  m_GUID: d23a09e1e73f681448ab4edcf30db110
   m_SerializeEntries:
   - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
     m_Address: Assets/AddressableAssets/001/data.txt
@@ -34,8 +34,8 @@ MonoBehaviour:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: ea764d52296fa56459daaf6e1ab8792e, type: 2}
+  m_Settings: {fileID: 11400000, guid: b359f8ba53dfe1440823ed45145a1ba3, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 473fc797d9778c446a82caca23552303, type: 2}
-    - {fileID: 11400000, guid: dc60b7619c8d7714d8fad26bf1a92dd2, type: 2}
+    - {fileID: 11400000, guid: 5a810548ad32dd6498f746e745c37fc3, type: 2}
+    - {fileID: 11400000, guid: 0cdf3dd9c4b2b634e90f7e8003f7c849, type: 2}

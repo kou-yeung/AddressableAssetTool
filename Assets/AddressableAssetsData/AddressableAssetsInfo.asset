@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ddf2101c298b9f4dbeb49b6559edc10, type: 3}
   m_Name: AddressableAssetsInfo
-  m_EditorClassIdentifier: 
-  local: {fileID: 11400000, guid: d9d254a81230e1745855aca917356c1b, type: 2}
-  remote: {fileID: 11400000, guid: 941be1dc5255915459f0c54fc3508ddb, type: 2}
+  m_EditorClassIdentifier: AddressableAssetsTool.Editor::AddressableAssetsTool.AddressableAssetsInfo
+  local: {fileID: 11400000, guid: e3d759692ada2c5469b2529fe28b9b20, type: 2}
+  remote: {fileID: 11400000, guid: e21182fd7332e2e48a1e095c4e14a25b, type: 2}
   includeExtension: 1
   replaces: []
   items:
