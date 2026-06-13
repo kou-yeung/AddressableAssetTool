@@ -12,6 +12,8 @@ install Addressables:
 
 [Download](https://github.com/kou-yeung/AddressableAssetTool/releases) and import AddressableAssetTool.unitypackage
 
+or install package from git URL : https://github.com/kou-yeung/AddressableAssetTool.git?path=Assets/AddressableAssetsTool
+
 ## Setup
 
 1.[AddressableAssetTool] > [Setup]
