@@ -185,5 +185,14 @@ namespace AddressableAssetsTool
                 Selection.activeObject = info;
             }
         }
+
+        /// <summary>
+        /// 便利セットアップ
+        /// </summary>
+        [MenuItem("AddressableAssetsTool/ClearCache")]
+        public static void ClearCache()
+        {
+            Caching.ClearCache();
+        }
     }
 }
