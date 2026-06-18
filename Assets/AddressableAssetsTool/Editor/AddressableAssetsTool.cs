@@ -36,6 +36,13 @@ namespace AddressableAssetsTool
                     if (!string.IsNullOrEmpty(item.label)) settings.AddLabel(item.label, true);
                 }
 
+                bool IsExclusion(AddressableAssetEntry entry)
+                {
+                    // 自分が管理してない Group のアセットは弄らない
+                    if (entry?.parentGroup == null) return false;
+                    return !((entry.parentGroup == asset.local) || (entry.parentGroup == asset.remote));
+                }
+
                 // アドレスをリストアップし、設定する
                 foreach (var item in asset.items)
                 {
@@ -53,6 +60,12 @@ namespace AddressableAssetsTool
                         {
                             if (Path.GetExtension(fn) == ".meta") continue; // meta データ弾く
                             var group = (item.assetType == AssetType.Local) ? asset.local : asset.remote;
+
+                            // 除外対象？
+                            if (IsExclusion(settings.FindAssetEntry(AssetDatabase.AssetPathToGUID(fn))))
+                            {
+                                continue;
+                            }
                             var e = settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(fn), group, false, true);
                             if (e != null)
                             {
@@ -77,7 +90,7 @@ namespace AddressableAssetsTool
             }
 
             // 対象外のアセットを削除する
-            foreach (var group in settings.groups)
+            foreach (var group in new[] { asset.local, asset.remote })
             {
                 var ids = group.entries.Where(v => !entries.Contains(v.guid)).Select(v => v.guid).ToArray();
                 foreach (var id in ids)
