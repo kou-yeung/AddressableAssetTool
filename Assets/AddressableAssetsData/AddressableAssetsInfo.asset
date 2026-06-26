@@ -15,6 +15,7 @@ MonoBehaviour:
   local: {fileID: 11400000, guid: e3d759692ada2c5469b2529fe28b9b20, type: 2}
   remote: {fileID: 11400000, guid: e21182fd7332e2e48a1e095c4e14a25b, type: 2}
   includeExtension: 1
+  useLowerCase: 1
   replaces: []
   items:
   - path: {fileID: 102900000, guid: 7b58f01392efa09479e613d71261ccc1, type: 3}

@@ -16,19 +16,19 @@ MonoBehaviour:
   m_GUID: d23a09e1e73f681448ab4edcf30db110
   m_SerializeEntries:
   - m_GUID: 169a93144638c4c46ad7e54b8ff4c5fc
-    m_Address: Assets/AddressableAssets/001/data.txt
+    m_Address: assets/addressableassets/001/data.txt
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3ec37bdb5b3282e4a96add047f562c50
-    m_Address: Assets/AddressableAssets/Chara.prefab
+    m_Address: assets/addressableassets/chara.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f2c9c4342a53a8408457cc738da9e37
-    m_Address: Assets/AddressableAssets/001/chara.png
+    m_Address: assets/addressableassets/001/chara.png
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

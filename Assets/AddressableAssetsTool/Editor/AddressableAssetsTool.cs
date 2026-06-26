@@ -80,6 +80,9 @@ namespace AddressableAssetsTool
                                 // 拡張子を含まない場合
                                 if (!asset.includeExtension) e.address = Path.ChangeExtension(e.address, null);
 
+                                // 小文字モード
+                                if (asset.useLowerCase) e.address = e.address.ToLower();
+
                                 e.labels.Clear();
                                 if (!string.IsNullOrEmpty(item.label)) e.SetLabel(item.label, true);
                                 entries.Add(e.guid);

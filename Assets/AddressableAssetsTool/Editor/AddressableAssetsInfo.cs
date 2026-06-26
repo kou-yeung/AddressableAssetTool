@@ -66,6 +66,7 @@ namespace AddressableAssetsTool
         public AddressableAssetGroup remote;
 
         public bool includeExtension = true;
+        public bool useLowerCase = false;
         public List<ReplaceItem> replaces;
         public List<AddressableAssetsItem> items;
     }
@@ -111,6 +112,7 @@ namespace AddressableAssetsTool
 
             // settings
             EditorGUILayout.PropertyField(serializedObject.FindProperty("includeExtension"), new GUIContent("Include Extension"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("useLowerCase"), new GUIContent("Use Lower Case"));
 
             // 置き換えルール
             if (replaceRuleList == null)

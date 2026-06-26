@@ -49,7 +49,7 @@ public class Sample : MonoBehaviour
 
     void Load()
     {
-        var resource = AddressableAssets.LoadAssetAsync<GameObject>("Assets/AddressableAssets/Chara.prefab");
+        var resource = AddressableAssets.LoadAssetAsync<GameObject>("assets/addressableassets/chara.prefab");
         resource.Completed += (res) =>
         {
             Instantiate(res.Result, this.transform);
